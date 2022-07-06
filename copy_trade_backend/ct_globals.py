@@ -10,7 +10,7 @@ import pandas as pd
 import urllib.parse
 import sys
 
-sys.path.append("/home/thomas/binance-copy-trade-bot/data")
+sys.path.append("/home/william/PyCharmProjects/binance-bot/binance-copy-trade-bot/data")
 from credentials import db_user, db_pw
 
 logging.basicConfig(
@@ -28,7 +28,8 @@ class ctGlobal:
         self.has_announced = dict()
         username = urllib.parse.quote_plus(db_user)
         password = urllib.parse.quote_plus(db_pw)
-        self.dbpath = "mongodb://%s:%s@localhost:27017/" % (username, password)
+        #self.dbpath = "mongodb://%s:%s@localhost:27017/" % (username, password)
+        self.dbpath = "mongodb://localhost:27017/"
         logger.info(self.dbpath)
         return
 

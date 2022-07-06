@@ -21,7 +21,7 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 from datetime import datetime
 import sys
-sys.path.append("/home/thomas/binance-copy-trade-bot/data")
+sys.path.append("/home/william/PyCharmProjects/binance-bot/binance-copy-trade-bot/data")
 from credentials import ip
 
 import logging

@@ -10,8 +10,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from bs4 import BeautifulSoup
 
-sys.path.append("/home/thomas/binance-copy-trade-bot/data")
-sys.path.append("/home/thomas/binance-copy-trade-bot/config")
+sys.path.append("/home/william/PyCharmProjects/binance-bot/binance-copy-trade-bot/data")
+sys.path.append("/home/william/PyCharmProjects/binance-bot/binance-copy-trade-bot/config")
 from credentials import db_user, db_pw
 from config import chrome_location, driver_location
 import logging
@@ -27,7 +27,8 @@ class tgGlobals:
     def __init__(self, udt):
         username = urllib.parse.quote_plus(db_user)
         password = urllib.parse.quote_plus(db_pw)
-        self.dbpath = "mongodb://%s:%s@localhost:27017/" % (username, password)
+        #self.dbpath = "mongodb://%s:%s@localhost:27017/" % (username, password)
+        self.dbpath = "mongodb://localhost:27017/"
         self.is_reloading = False
         self.reloading = False
         self.updater = udt  # Updater(cnt.bot_token2)

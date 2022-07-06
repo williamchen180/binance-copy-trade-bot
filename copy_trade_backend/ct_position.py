@@ -2,7 +2,7 @@ import threading
 from ct_bybit import BybitClient
 import sys
 
-sys.path.append("/home/thomas/binance-copy-trade-bot/config")
+sys.path.append("/home/william/PyCharmProjects/binance-bot/binance-copy-trade-bot/config")
 from config import chrome_location, driver_location
 import time
 import logging
@@ -303,6 +303,7 @@ class WebScraping(threading.Thread):
         idx2 = x.find("Start")
         idx3 = x.find("No data")
         x = x[idx:idx2]
+        print(x)
         following_users = self.userdb.fetch_following(uid)
         try:
             prev_position = self.userdb.fetch_trader_position(uid)
@@ -530,6 +531,7 @@ class WebScraping(threading.Thread):
                 # logger.info(f"Running {uid['name']}.")
                 try:
                     self.driver.get(uid["url"])
+                    print(uid['url'])
                 except:
                     logger.error("cannot fetch url")
                     continue
